@@ -1,32 +1,56 @@
-package ch02.sec03;
+package ch03.sec01;
 
-public class OperationsPromoEx  {
-	public static void main(String[] args) {
-        // 연산 중 발생하는 자동 형변환
-        byte byteValue1 = 10;
-        byte byteValue2 = 20;
+public class IncreaseOp {
 
-        byte byteValue3 = byteValue1 + byteValue2;  // byte + byte 이어도 '+' 연산은 int가 기본임
-        // '+' 연산은 int + int 이므로 byteValue1과 byteValue2는 자동형변환 되어져서 int형으로 변경됨
-        // '+' 연산 결과도 int이므로 byte 변수에 대입 불가능(오류발생)
-        int intValue = byteValue1 + byteValue2;
-        System.out.println("intValue : " + intValue);
+    public static void main(String[] args) {
+        // 증가감 연산자
+        int x = 10;
+        int y = 10;
+        int z ;
 
-        char charValue1 = 'A';
-        char charValue2 = 1;
-        // chat charValue3 = charValue1 + charValue2;   // 정수형 + 연산 int가 기본 타입
-        int intValue2 = charValue1 + charValue2;
-        System.out.println("unicode : " + intValue2);
-        System.out.println("unicode 출력문자 : " + (char)intValue2);
+        //증가감연산자 단독 사용 : 위치 상관 없음
+        System.out.println("---------------------------");
+        x++;
+        ++x;
+        System.out.println(x); //x=12
 
-        int intValue3 = 10;
-        int intValue4 = intValue3 / 4;  // 정수 / 정수 -> 정수(int) : 소수점 이하 연산은 진행되지 않음
 
-        ///////////////////////////////////////////////////
-        ///  연산 결과가 실수여야 할 때는 실수연산 진행해야 함
-        // intValue4 = intValue3 / 4.0;     // 정수 / 실수 -> 정수가 실수로 형변환 되면서 실수 / 실수 -> 실수(double)
-        double doubleValue = intValue3 / 4.0;
-        System.out.println(doubleValue);
+        System.out.println("---------------------------");
+        y--;
+        --y;
+        System.out.println(y); //y=8
+
+        //대입연산자와 같이 사용
+        System.out.println("---------------------------");
+        z = x++; //z에 대입 x를 증가
+        System.out.println("z=" + z); //12
+        System.out.println("x=" + x); //13
+
+        //대입연산자와 같이 사용
+        System.out.println("---------------------------");
+        z = ++x; //x 먼저 증가 z에 대입
+        System.out.println("z=" + z); //14
+        System.out.println("x=" + x); //14
+
+        // 다른 연산자와 같이 사용(+ 연산과 같이 사용)
+        System.out.println("---------------------------");
+        z = ++x + y++;
+        System.out.println("z=" + z); //15+8
+        System.out.println("x=" + x); //15
+        System.out.println("y=" + y); //9
+        System.out.println(~10);
+
+
+        
+
+
+
+
+
+
+
+
 
     }
+
 }
