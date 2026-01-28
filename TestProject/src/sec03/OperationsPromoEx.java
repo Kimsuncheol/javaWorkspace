@@ -41,7 +41,7 @@ public class IncreaseOp {
         System.out.println(~10);
 
 
-        
+
 
 
 
